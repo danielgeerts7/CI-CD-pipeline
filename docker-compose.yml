@@ -4,6 +4,6 @@ services:
   node-app:
     build:
       context: ./app
-    image: danielgeerts7/node-app
+    image: de.icr.io/cicd-casestudy/ibm-node-app:latest
     ports:
-      - 3000:3000
+      - 80:3000

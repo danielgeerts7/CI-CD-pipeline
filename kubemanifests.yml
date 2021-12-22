@@ -46,7 +46,7 @@ items:
             io.kompose.service: node-app
         spec:
           containers:
-            - image: danielgeerts7/node-app
+            - image: de.icr.io/cicd-casestudy/ibm-node-app:latest
               imagePullPolicy: Never
               name: node-app
               ports:

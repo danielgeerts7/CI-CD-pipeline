@@ -10,11 +10,12 @@
 6. Create cluster on IBM Cloud
 7. ibmcloud cli installed
 8. Push Docker containers to IBM Registry
-
-7. Setup 'Deploy to IBM Cloud Kubernetes Service' under Github Actions
+9. Setup 'Deploy to IBM Cloud Kubernetes Service' under Github Actions
+10. Setup secrets in GitHub
+11. Refactor source to fit pipeline standards
 
 
 ### Learning thoughts:
 
 - Documentation of Cloud vendor is valuable
-- 
+- t
