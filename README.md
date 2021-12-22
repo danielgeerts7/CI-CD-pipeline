@@ -17,3 +17,9 @@ See [MY_PROCESS.md](MY_PROCESS.md) for an action log and some sidenotes.
 
 - Node.JS
 
+### Cheat sheet:
+`$ docker-compose up -d --build`
+
+`$ docker-compose push`
+
+`$ docker-compose down`
