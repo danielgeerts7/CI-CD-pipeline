@@ -20,10 +20,10 @@ env:
   IBM_CLOUD_REGION: eu-de
   ICR_NAMESPACE: ${{ secrets.ICR_NAMESPACE }}
   REGISTRY_HOSTNAME: de.icr.io
-  IMAGE_NAME: iks-node-app
+  IMAGE_NAME: ibm-node-app-from-github-action
   IKS_CLUSTER: my-ibm-cluster
   DEPLOYMENT_NAME: iks-test
-  PORT: 3000
+  PORT: 80
 
 jobs:
   setup-build-publish-deploy:
