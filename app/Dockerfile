@@ -5,7 +5,7 @@ FROM node:17
 WORKDIR /usr/src/app
 
 # Copy app dependency list
-COPY package*.json ./
+COPY package.json ./
 
 # Install dependencies
 RUN npm install
