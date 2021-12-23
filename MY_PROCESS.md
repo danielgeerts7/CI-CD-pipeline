@@ -20,4 +20,4 @@
 ### Learning thoughts:
 
 - Documentation of Cloud vendor is valuable
-- t
+- 

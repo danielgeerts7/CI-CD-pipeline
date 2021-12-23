@@ -1,8 +1,11 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const functions = require('./functions')
+const app = express();
+
 
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  let result = functions.catString('Hello', 'world', '!')
+  res.send(result);
 });
 
 app.listen(3000, function () {
