@@ -9,7 +9,6 @@ See [MY_PROCESS.md](MY_PROCESS.md) for an action log and some sidenotes.
 
 - Docker + [Docker Compose](https://docs.docker.com/get-started/08_using_compose/)
 - [Kubernetes](https://kubernetes.io/)
-- [Kompose](https://kompose.io/)
 - [IBM Cloud Registry](https://cloud.ibm.com/docs/Registry)
 - [IBM Cloud Kubernetes Services](https://cloud.ibm.com/docs/containers)
 
@@ -27,15 +26,20 @@ See [MY_PROCESS.md](MY_PROCESS.md) for an action log and some sidenotes.
 
 `$ docker-compose down`
 
+Go to [localhost](http://localhost:80) to view Docker results.
+
+
 #### Kubernetes:
 
 `$ kubectl apply -f kubemanifests.yml`
 
-`$ kubectl get all`
+Go to [localhost:32100](http://localhost:32100) to view Kubernetes results.
 
-`$ kubectl exec -it my-node-app-557d99ff59-tc57w sh`
-
-`$ printenv | grep SERVICE`
+> [Optional] Check if Kubernetes works:
+> 
+> `$ kubectl get all`
+> `$ kubectl exec -it my-node-app-557d99ff59-tc57w sh`
+> `$ printenv | grep SERVICE`
 
 #### Terraform:
 
@@ -44,3 +48,5 @@ See [MY_PROCESS.md](MY_PROCESS.md) for an action log and some sidenotes.
 `$ terraform apply`
 
 `$ terraform plan`
+
+Go to [??](??) to view Terraform results.
