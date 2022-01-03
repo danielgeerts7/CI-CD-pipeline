@@ -12,7 +12,8 @@ COPY package-lock.json ./
 RUN npm ci
 
 # Copy app source
-COPY app.js .
+COPY . .
 
 EXPOSE 3000
+#RUN npm test
 CMD ["node", "app.js"]
