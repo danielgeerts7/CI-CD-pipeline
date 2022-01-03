@@ -22,11 +22,11 @@ See [MY_PROCESS.md](MY_PROCESS.md) for an action log and some sidenotes.
 
 `$ docker-compose up -d --build`
 
+Go to [localhost](http://localhost:80) to view Docker results.
+
 `$ docker-compose push`
 
 `$ docker-compose down`
-
-Go to [localhost](http://localhost:80) to view Docker results.
 
 
 #### Kubernetes:
@@ -34,6 +34,8 @@ Go to [localhost](http://localhost:80) to view Docker results.
 `$ kubectl apply -f kubemanifests.yml`
 
 Go to [localhost:32100](http://localhost:32100) to view Kubernetes results.
+
+`$ kubectl delete -f kubemanifests.yml`
 
 > [Optional] Check if Kubernetes works:
 > 
@@ -43,10 +45,12 @@ Go to [localhost:32100](http://localhost:32100) to view Kubernetes results.
 
 #### Terraform:
 
+`$ terraform init`
+
 `$ terraform plan`
 
 `$ terraform apply`
 
-`$ terraform plan`
-
 Go to [??](??) to view Terraform results.
+
+`$ terraform destroy`
