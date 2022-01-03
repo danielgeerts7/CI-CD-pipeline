@@ -1,59 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-node-app
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: my-node-app
+  template:
+    metadata:
+      labels:
+        app: my-node-app
+    spec:
+      containers:
+        - name: my-node-app
+          image: de.icr.io/cicd-casestudy/ibm-node-app:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3000
+          resources: {}
+      restartPolicy: Always
+---
 apiVersion: v1
-items:
-  - apiVersion: v1
-    kind: Service
-    metadata:
-      annotations:
-        kompose.cmd: kompose convert -f docker-compose.yml -o kubemanifests.yml
-        kompose.version: 1.26.0 (HEAD)
-      creationTimestamp: null
-      labels:
-        io.kompose.service: node-app
-      name: node-app
-    spec:
-      type: LoadBalancer
-      ports:
-        - name: "3000"
-          port: 3000
-          targetPort: 3000
-      selector:
-        io.kompose.service: node-app
-    status:
-      loadBalancer: {}
-  - apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      annotations:
-        kompose.cmd: kompose convert -f docker-compose.yml -o kubemanifests.yml
-        kompose.version: 1.26.0 (HEAD)
-      creationTimestamp: null
-      labels:
-        io.kompose.service: node-app
-      name: node-app
-    spec:
-      replicas: 1
-      selector:
-        matchLabels:
-          io.kompose.service: node-app
-      strategy: {}
-      template:
-        metadata:
-          annotations:
-            kompose.cmd: kompose convert -f docker-compose.yml -o kubemanifests.yml
-            kompose.version: 1.26.0 (HEAD)
-          creationTimestamp: null
-          labels:
-            io.kompose.service: node-app
-        spec:
-          containers:
-            - image: de.icr.io/cicd-casestudy/ibm-node-app:latest
-              imagePullPolicy: Never
-              name: node-app
-              ports:
-                - containerPort: 3000
-              resources: {}
-          restartPolicy: Always
-    status: {}
-kind: List
-metadata: {}
-
+kind: Service
+metadata:
+  name: my-node-app
+spec:
+  selector:
+    app: my-node-app
+  type: NodePort
+  ports:
+    - nodePort: 31234
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

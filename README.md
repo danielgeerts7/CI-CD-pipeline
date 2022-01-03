@@ -17,9 +17,30 @@ See [MY_PROCESS.md](MY_PROCESS.md) for an action log and some sidenotes.
 
 - Node.JS
 
-### Cheat sheet:
+## CLI Cheat sheet:
+
+#### Docker:
+
 `$ docker-compose up -d --build`
 
 `$ docker-compose push`
 
 `$ docker-compose down`
+
+#### Kubernetes:
+
+`$ kubectl apply -f kubemanifests.yml`
+
+`$ kubectl get all`
+
+`$ kubectl exec -it my-node-app-557d99ff59-tc57w sh`
+
+`$ printenv | grep SERVICE`
+
+#### Terraform:
+
+`$ terraform plan`
+
+`$ terraform apply`
+
+`$ terraform plan`
