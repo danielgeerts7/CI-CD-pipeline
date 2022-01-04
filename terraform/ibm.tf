@@ -6,7 +6,7 @@
 terraform {
   required_providers {
     ibm = {
-      source = "IBM-Cloud/ibm"
+      source  = "IBM-Cloud/ibm"
       version = "~> 1.37.1"
     }
   }
@@ -21,12 +21,6 @@ provider "ibm" {
 # Create a namespace
 resource "ibm_cr_namespace" "cr_namespace" {
   name = var.namespace
-}
-
-# Create an IBM Cloud infrastructure SSH key. You can find the SSH key surfaces in the infrastructure console under Devices > Manage > SSH Keys
-resource "ibm_compute_ssh_key" "test_key_1" {
-  label      = "test_key_1"
-  public_key = var.ssh_public_key
 }
 
 # IBM cluster
