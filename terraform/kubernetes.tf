@@ -1,30 +1,29 @@
 /* 
 * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/guides/getting-started
-* https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-tutorial-tf-clusters
-* https://cloud.ibm.com/docs/containers?topic=containers-cs_cluster_tutorial#cs_cluster_tutorial
 */
 
-# IBM cluster
-resource "ibm_container_cluster" "tfcluster" {
-  name              = "tfcluster-daniel"
-  datacenter        = "fra02" # Frankfurt, Germany
-  machine_type      = "free"  # the free IBM worker node
-  hardware          = "shared"
-  public_vlan_id    = "vlan"
-  private_vlan_id   = "vlan"
-  no_subnet         = true
-  kube_version      = "1.21.7"
-  default_pool_size = 1 # max 1 worker node allowed
-}
-
-
-# K8
-resource "kubernetes_namespace" "cicd" {
-  metadata {
-    name = "cicd-namespace"
+terraform {
+  required_providers {
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+      version = "~> 2.7.1"
+    }
   }
 }
 
+# Configure Kubernetes provder
+provider "kubernetes" {
+  config_path = "~/.kube/config"
+}
+
+# Create Kubernetes namespace
+resource "kubernetes_namespace" "cicd" {
+  metadata {
+    name = var.namespace
+  }
+}
+
+# Create Kubernetes DEPLOYMENT
 resource "kubernetes_deployment" "cicd" {
   metadata {
     name      = "nodeapp-deployment"
@@ -56,6 +55,7 @@ resource "kubernetes_deployment" "cicd" {
   }
 }
 
+# Create Kubernetes SERVICE
 resource "kubernetes_service" "cicd" {
   metadata {
     name = "nodeapp-service"
