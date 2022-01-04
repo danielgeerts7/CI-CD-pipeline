@@ -10,12 +10,14 @@
 6. Create cluster on IBM Cloud
 7. ibmcloud cli installed
 8. Push Docker containers to IBM Registry
-9. Setup 'Deploy to IBM Cloud Kubernetes Service' under Github Actions
+9. Setup 'Deploy to IBM Cloud Kubernetes Service' under Github Actions (generate ibm.yml)
 10. Setup secrets in GitHub
 11. Refactor source to fit pipeline standards
+12. Refactor ibm.yml to fit IBM free cloud env
+13. Setup Mocha&Chai testing framework for Node.JS
 
 
 ### Learning thoughts:
 
 - Documentation of Cloud vendor is valuable
-- t
+- 
