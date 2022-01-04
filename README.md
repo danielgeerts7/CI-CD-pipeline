@@ -11,6 +11,7 @@ See [MY_PROCESS.md](MY_PROCESS.md) for an action log and some sidenotes.
 - [Kubernetes](https://kubernetes.io/)
 - [IBM Cloud Registry](https://cloud.ibm.com/docs/Registry)
 - [IBM Cloud Kubernetes Services](https://cloud.ibm.com/docs/containers)
+- [Terraform](https://registry.terraform.io/)
 
 ### Apps:
 
