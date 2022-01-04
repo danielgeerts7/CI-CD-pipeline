@@ -2,7 +2,7 @@
 function catString(...a) {
     meow = ''
     for (var i = 0; i < a.length; i++) {
-        meow += a[i]
+        meow += a[i] + ' '
     }
     return meow.trim()
 }
