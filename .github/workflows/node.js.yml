@@ -12,13 +12,12 @@ on:
 jobs:
   setup-build-test:
     runs-on: ubuntu-latest
-    environment: development
     defaults:
       run:
         working-directory: ./app
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x, 17.x]
+        node-version: [16.x, 17.x]
     steps:    
     - name: CHECK-OUT GIT REPOSITORY
       uses: actions/checkout@v2
