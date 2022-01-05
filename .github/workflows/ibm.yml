@@ -23,7 +23,7 @@ env:
   IMAGE_NAME: cicd-casestudy-app
   IKS_CLUSTER: tfcluster-daniel
   DEPLOYMENT_NAME: iks-test
-  PORT: 3000
+  PORT: 80
 
 jobs:
   setup-build-publish-deploy:
@@ -67,6 +67,11 @@ jobs:
     # Deploy the Docker image to the IKS cluster
     - name: Deploy to IKS
       run: |
+        ibmcloud ks cluster config --cluster $IKS_CLUSTER
+        kubectl config current-context
+        kubectl create deployment $DEPLOYMENT_NAME --image=$REGISTRY_HOSTNAME/$ICR_NAMESPACE/$IMAGE_NAME:$GITHUB_SHA --dry-run -o yaml > deployment.yaml
         kubectl apply -f deployment.yaml
+        kubectl rollout status deployment/$DEPLOYMENT_NAME
+        kubectl create service nodeport $DEPLOYMENT_NAME --tcp=80:$PORT --dry-run -o yaml > service.yaml
         kubectl apply -f service.yaml
-        kubectl get all
+        kubectl get services -o wide
