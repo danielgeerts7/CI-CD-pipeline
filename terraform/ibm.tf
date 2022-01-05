@@ -11,7 +11,7 @@ resource "ibm_cr_namespace" "cr_namespace" {
 
 # IBM cluster
 resource "ibm_container_cluster" "tfcluster" {
-  name              = "tfcluster-daniel"
+  name              = var.clustername
   datacenter        = "fra02" # Frankfurt, Germany
   machine_type      = "free"  # the free IBM worker node
   hardware          = "shared"
@@ -19,5 +19,15 @@ resource "ibm_container_cluster" "tfcluster" {
   private_vlan_id   = "vlan"
   no_subnet         = true
   kube_version      = "1.21.7"
-  default_pool_size = 1 # max 1 worker node allowed
+  default_pool_size = 1 # max 1 worker node allowed  worker_num        = 1
+
+  labels = {
+    "test" = "test-pool"
+  }
+
+  webhook {
+    level = "Normal"
+    type  = "slack"
+    url   = var.webhook_to_slack
+  }
 }
