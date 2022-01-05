@@ -2,9 +2,6 @@
 
 See [CASE_STUDY.md](CASE_STUDY.md) for a detailed description of the project.
 
-See [MY_PROCESS.md](MY_PROCESS.md) for an action log and some sidenotes.
-
-
 ### Tools used:
 
 - Docker + [Docker Compose](https://docs.docker.com/get-started/08_using_compose/)
@@ -15,9 +12,26 @@ See [MY_PROCESS.md](MY_PROCESS.md) for an action log and some sidenotes.
 
 ### Apps:
 
-- Node.JS
+- /app :Node.JS
 
 ## CLI Cheat sheet:
+
+### Makefile
+
+`make compose`
+
+`make build`
+
+`make push API_KEY=..`
+
+`make tf-create-workspace ENV=staging`
+
+`make tf-init ENV=staging`
+
+`make tf-plan ENV=staging`
+
+See more make commands in [Makefile](Makefile)
+
 
 #### Docker:
 
@@ -45,6 +59,8 @@ Go to [localhost:32100](http://localhost:32100) to view Kubernetes results.
 > `$ printenv | grep SERVICE`
 
 #### Terraform:
+
+`$ cd terraform`
 
 `$ terraform init`
 

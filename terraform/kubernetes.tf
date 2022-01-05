@@ -1,16 +1,3 @@
-/* 
-* https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/guides/getting-started
-*/
-
-terraform {
-  required_providers {
-    kubernetes = {
-      source  = "hashicorp/kubernetes"
-      version = "~> 2.7.1"
-    }
-  }
-}
-
 # Configure Kubernetes provder
 provider "kubernetes" {
   config_path = "~/.kube/config"
