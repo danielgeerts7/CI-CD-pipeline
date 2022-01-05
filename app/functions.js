@@ -6,5 +6,5 @@ exports.catString = function (...words) {
     for (var i = 0; i < words.length; i++) {
         sentence += words[i] + ' '
     }
-    return sentence//.trim()
+    return sentence.trim()
 }
