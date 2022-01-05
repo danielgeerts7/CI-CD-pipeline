@@ -1,7 +1,7 @@
 GITHUB_SHA?=latest
 NAMESPACE=ibm-daniels-workspace
 LOCAL_TAG=cicd-casestudy-app:$(GITHUB_SHA)
-BASE_REMOTE=de.icr.io
+BASE_REMOTE=icr.io
 REMOTE_TAG=$(BASE_REMOTE)/$(NAMESPACE)/$(LOCAL_TAG)
 
 ###
@@ -19,18 +19,17 @@ endif
 build:
 	docker build -t $(LOCAL_TAG) ./app
 
-push:
-	docker tag $(LOCAL_TAG) danielgeerts7/$(LOCAL_TAG)
-	docker push danielgeerts7/$(LOCAL_TAG)
+# push:
+# 	docker tag $(LOCAL_TAG) danielgeerts7/$(LOCAL_TAG)
+# 	docker push danielgeerts7/$(LOCAL_TAG)
 
-## Not working: push to IBM Cloud Container Registry
-# push: check-api-key
-# 	ibmcloud login --apikey $(API_KEY)
-# 	ibmcloud cr login
-# 	ibmcloud cr namespace-add $(NAMESPACE)
-# 	docker login -u iamapikey -p $(API_KEY) $(BASE_REMOTE)
-# 	docker tag $(LOCAL_TAG) $(REMOTE_TAG)
-# 	docker push $(REMOTE_TAG)
+push: check-api-key
+	ibmcloud login --apikey $(API_KEY)
+	ibmcloud cr login
+	ibmcloud cr namespace-add $(NAMESPACE)
+	docker login -u iamapikey -p $(API_KEY) $(BASE_REMOTE)
+	docker tag $(LOCAL_TAG) $(REMOTE_TAG)
+	docker push $(REMOTE_TAG)
 
 ###
 
@@ -81,7 +80,7 @@ CONTAINER_NAME=my-node-app
 
 # deploy: check-env
 # #	$(MAKE) ssh-cmd CMD='ibmcloud login'
-# 	$(MAKE) ssh-cmd CMD='docker login -u iamapikey -p <api_key> de.icr.io'
+# 	$(MAKE) ssh-cmd CMD='docker login -u iamapikey -p <api_key> icr.io'
 
 # 	@echo "pulling new container image..."
 # 	$(MAKE) ssh-cmd CMD='docker pull $(REMOTE_TAG)'
