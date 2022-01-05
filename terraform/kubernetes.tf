@@ -1,7 +1,5 @@
 # Configure Kubernetes provder
-provider "kubernetes" {
-  config_path = "~/.kube/config"
-}
+provider "kubernetes" {}
 
 # Create Kubernetes namespace
 resource "kubernetes_namespace" "cicd" {
