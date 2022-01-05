@@ -31,7 +31,7 @@ resource "kubernetes_deployment" "cicd" {
       }
       spec {
         container {
-          image = "de.icr.io/cicd-casestudy/ibm-node-app:latest" #path = "/app"
+          image = "de.icr.io/ibm-daniels-workspace/cicd-casestudy-app:latest" #path = "/app"
           name  = "nodeapp-container"
           port {
             container_port = 3000
