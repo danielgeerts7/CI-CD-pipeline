@@ -40,8 +40,8 @@ jobs:
       run: |
         cd terraform
         terraform init
-        terraform plan -out apply_this.tfstate
-        terraform apply apply_this.tfstate
+        terraform plan -out apply_this.tfstate -var="ibmcloud_api_key=${IBM_CLOUD_API_KEY}" -var="namespace=${IMAGE_NAME}"
+        terraform apply apply_this.tfstate -var="ibmcloud_api_key=${IBM_CLOUD_API_KEY}" -var="namespace=${IMAGE_NAME}"
         cd ..
 
     # Download and Install IBM Cloud CLI
