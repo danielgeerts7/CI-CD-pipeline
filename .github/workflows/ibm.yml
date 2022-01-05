@@ -20,7 +20,7 @@ env:
   IBM_CLOUD_REGION: eu-de
   ICR_NAMESPACE: ${{ secrets.ICR_NAMESPACE }}
   REGISTRY_HOSTNAME: de.icr.io
-  IMAGE_NAME: cicd-casestudy-app:latest
+  IMAGE_NAME: cicd-casestudy-app
   IKS_CLUSTER: tfcluster-daniel
   DEPLOYMENT_NAME: iks-test
   PORT: 80
