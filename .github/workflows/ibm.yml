@@ -23,7 +23,7 @@ env:
   IMAGE_NAME: cicd-casestudy-app
   IKS_CLUSTER: tfcluster-daniel
   DEPLOYMENT_NAME: iks-test
-  PORT: 80
+  PORT: 3000
 
 jobs:
   setup-build-publish-deploy:
