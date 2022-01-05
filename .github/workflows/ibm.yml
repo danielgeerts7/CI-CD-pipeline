@@ -23,7 +23,7 @@ env:
   IMAGE_NAME: cicd-casestudy-app
   IKS_CLUSTER: tfcluster-daniel
   DEPLOYMENT_NAME: iks-test
-  PORT: 80
+  PORT: 3000
 
 jobs:
   setup-build-publish-deploy:
@@ -34,6 +34,15 @@ jobs:
 
     - name: Checkout
       uses: actions/checkout@v2
+
+    # Setup the infrastructure via Terraform Orchestration
+    - name: Setup Terraform
+      run: |
+        cd terraform
+        terraform init
+        terraform plan -out apply_this.tfstate
+        terraform apply apply_this.tfstate
+        cd ..
 
     # Download and Install IBM Cloud CLI
     - name: Install IBM Cloud CLI
