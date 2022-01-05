@@ -40,7 +40,7 @@ jobs:
       run: |
         cd terraform
         terraform init
-        terraform plan -out apply_this.tfstate -var="ibmcloud_api_key=${IBM_CLOUD_API_KEY} " -var="namespace=${IMAGE_NAME}" -var="clustername=${IKS_CLUSTER}" -var="webhook_to_slack=${{ secrets.WEBHOOK_TO_SLACK }}" 
+        terraform plan -out apply_this.tfstate -var="ibm_cloud_api_key=${IBM_CLOUD_API_KEY} " -var="namespace=${IMAGE_NAME}" -var="clustername=${IKS_CLUSTER}" -var="webhook_to_slack=${{ secrets.WEBHOOK_TO_SLACK }}" 
         terraform apply apply_this.tfstate
         cd ..
 
