@@ -10,8 +10,9 @@ on:
     branches: [ master, development ]
 
 jobs:
-  build:
+  setup-build-test:
     runs-on: ubuntu-latest
+    environment: development
     defaults:
       run:
         working-directory: ./app
