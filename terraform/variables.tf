@@ -4,7 +4,7 @@ variable "ibmcloud_api_key" {
 
 variable "region" {
   type    = string
-  default = "us-de"
+  default = "eu-de"
 }
 
 variable "namespace" {
