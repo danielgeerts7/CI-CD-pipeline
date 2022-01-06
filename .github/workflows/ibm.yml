@@ -49,15 +49,6 @@ jobs:
       run: |
         ibmcloud login --apikey "${IBM_CLOUD_API_KEY}" --no-region
         ibmcloud cr login
-    
-    # Setup the infrastructure via Terraform orchestration
-    - name: Setup Terraform
-      run: |
-        cd terraform
-        terraform init
-        terraform plan -out "apply_this.tfplan" -var ibm_cloud_api_key=${IBM_CLOUD_API_KEY} -var namespace=${IMAGE_NAME} -var clustername=${IKS_CLUSTER} -var webhook_to_slack=${{ secrets.WEBHOOK_TO_SLACK }}
-        terraform apply "apply_this.tfplan"
-        cd ..
 
     # Build the Docker image
     - name: Build with Docker
