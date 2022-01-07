@@ -17,7 +17,7 @@ on:
 env:
   GITHUB_SHA: ${{ github.sha }}
   IBM_CLOUD_API_KEY: ${{ secrets.IBM_CLOUD_API_KEY }}
-#  IBM_CLOUD_REGION: eu-de
+  IBM_CLOUD_REGION: ${{ secrets.REGION }}
   ICR_NAMESPACE: ${{ secrets.ICR_NAMESPACE }}
   REGISTRY_HOSTNAME: icr.io
   IMAGE_NAME: cicd-casestudy-app
@@ -47,7 +47,8 @@ jobs:
     # Authenticate with IBM Cloud CLI
     - name: Authenticate with IBM Cloud CLI
       run: |
-        ibmcloud login --apikey "${IBM_CLOUD_API_KEY}" --no-region
+        ibmcloud login --apikey "${IBM_CLOUD_API_KEY}" -r "${IBM_CLOUD_REGION}" -g default
+        ibmcloud cr region-set "${IBM_CLOUD_REGION}"
         ibmcloud cr login
 
     # Build the Docker image
