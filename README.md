@@ -2,6 +2,10 @@
 
 View [CASE_STUDY.md](CASE_STUDY.md) for a detailed description of the project.
 
+[![Orchestration (Terraform)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/terraform.yml/badge.svg)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/terraform.yml)
+[![Continuous Deployment (IKS)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/ibm.yml/badge.svg)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/ibm.yml)
+[![Continuous Integration (node.js tests)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/node.js.yml/badge.svg)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/node.js.yml)
+
 ## Tools used:
 
 - Docker + [Docker Compose](https://docs.docker.com/get-started/08_using_compose/)
