@@ -39,7 +39,7 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      run: terraform plan -out "apply_this.tfplan" -var ibm_cloud_api_key=${IBM_CLOUD_API_KEY} -var namespace=${IMAGE_NAME} -var clustername=${IKS_CLUSTER} -var webhook_to_slack=${{ secrets.WEBHOOK_TO_SLACK }}
+      run: terraform plan -out "apply_this.tfplan" -var ibm_cloud_api_key=${{ secrets.IBM_CLOUD_API_KEY }} -var namespace=${{ secrets.ICR_NAMESPACE }} -var clustername=${{ secrets.CLUSTERNAME }} -var webhook_to_slack=${{ secrets.WEBHOOK_TO_SLACK }}
 
     - name: add-plan-comment
       id: comment
