@@ -12,11 +12,11 @@ variable "region" {
 }
 
 variable "namespace" {
-  type = string
+  type    = string
   default = "ibm-daniels-workspace"
 }
 
 variable "clustername" {
-  type = string
+  type    = string
   default = "tfcluster-daniel"
 }
