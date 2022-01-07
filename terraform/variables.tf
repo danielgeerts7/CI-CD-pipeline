@@ -16,7 +16,7 @@ variable "webhook_to_slack" {
 
 variable "region" {
   type    = string
-  default = "eu-de"
+  default = "us-south"
 }
 
 variable "namespace" {
