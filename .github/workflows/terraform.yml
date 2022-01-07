@@ -30,6 +30,7 @@ jobs:
         terraform_version: 1.1.2
         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
+    # Check terraform syntax
     - name: Terraform Format
       id: fmt
       run: terraform fmt -check
@@ -51,6 +52,7 @@ jobs:
       run: terraform plan -out "apply_this.tfplan" -var ibm_cloud_api_key=${{ secrets.IBM_CLOUD_API_KEY }} -var namespace=${{ secrets.ICR_NAMESPACE }} -var clustername=${{ secrets.CLUSTERNAME }} -var webhook_to_slack=${{ secrets.WEBHOOK_TO_SLACK }}
       continue-on-error: true
 
+    # Add 'terraform plan' status as a comment to the Pull Request
     - name: add-plan-comment
       id: comment
       uses: actions/github-script@v3
@@ -80,12 +82,13 @@ jobs:
             body: output
           })
     
+    # After adding status comment to PR > make workflow continue or fail
     - name: Terraform Plan Status
       if: steps.plan.outcome == 'failure'
       run: exit 1
         
-      # On push to development, build or change infrastructure according to Terraform configuration files
-      # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
+    # On push to development, build or change infrastructure according to Terraform configuration files
+    # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply
       if: github.ref == 'refs/heads/master' && github.event_name == 'push'
       run: terraform apply -auto-approve "apply_this.tfplan"
