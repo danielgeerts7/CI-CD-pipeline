@@ -2,11 +2,11 @@
 
 View [CASE_STUDY.md](CASE_STUDY.md) for a detailed description of the project.
 
-[![Orchestration (Terraform)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/terraform.yml/badge.svg)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/terraform.yml)
+[![Orchestration (Terraform)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/terraform.yml/badge.svg)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/terraform.yml?branch=master)
 
-[![Continuous Deployment (IKS)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/ibm.yml/badge.svg)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/ibm.yml)
+[![Continuous Deployment (IKS)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/ibm.yml/badge.svg)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/ibm.yml?branch=master)
 
-[![Continuous Integration (node.js tests)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/node.js.yml/badge.svg)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/node.js.yml)
+[![Continuous Integration (node.js tests)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/node.js.yml)
 
 ## Tools used:
 
