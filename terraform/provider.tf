@@ -15,4 +15,11 @@ terraform {
       version = "~> 1.37.1"
     }
   }
+  cloud {
+    organization = "devdaniels"
+
+    workspaces {
+      name = "ibm-daniels-workspace"
+    }
+  }
 }
