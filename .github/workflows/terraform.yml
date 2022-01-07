@@ -49,7 +49,7 @@ jobs:
     - name: Terraform Plan
       id: plan
       if: github.event_name == 'pull_request'
-      run: terraform plan -out "apply_this.tfplan" -var ibm_cloud_api_key=${{ secrets.IBM_CLOUD_API_KEY }} -var namespace=${{ secrets.ICR_NAMESPACE }} -var clustername=${{ secrets.CLUSTERNAME }} -var webhook_to_slack=${{ secrets.WEBHOOK_TO_SLACK }}
+      run: terraform plan -out "apply_this.tfplan" -var ibm_cloud_org=${{ secrets.IBM_CLOUD_ORG }} -var ibm_cloud_space=${{ secrets.IBM_CLOUD_SPACE }} -var ibm_cloud_api_key=${{ secrets.IBM_CLOUD_API_KEY }} -var namespace=${{ secrets.ICR_NAMESPACE }} -var clustername=${{ secrets.CLUSTERNAME }} -var webhook_to_slack=${{ secrets.WEBHOOK_TO_SLACK }}
       continue-on-error: true
 
     # Add 'terraform plan' status as a comment to the Pull Request

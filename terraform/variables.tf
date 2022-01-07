@@ -1,3 +1,11 @@
+variable "ibm_cloud_org" {
+  type = string
+}
+
+variable "ibm_cloud_space" {
+  type = string
+}
+
 variable "ibm_cloud_api_key" {
   type = string
 }
