@@ -3,8 +3,7 @@ name: 'Orchestration (Terraform)'
 on:
   push:
     branches:
-    - master
-  pull_request:
+      - master
 
 jobs:
   terraform:
