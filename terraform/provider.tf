@@ -23,3 +23,7 @@ terraform {
     }
   }
 }
+
+credentials "app.terraform.io" {
+  token = ${{ secrets.TERRAFORM_APIKEY }}
+}
