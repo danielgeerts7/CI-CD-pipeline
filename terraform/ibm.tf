@@ -31,7 +31,7 @@ resource "ibm_cr_namespace" "cr_namespace" {
 }
 
 # IBM cluster
-resource "ibm_container_cluster" "tfcluster" {
+resource "ibm_container_cluster" "cluster" {
   name              = var.clustername
   datacenter        = "fra02" # Frankfurt, Germany
   machine_type      = "free"  # the free IBM worker node
