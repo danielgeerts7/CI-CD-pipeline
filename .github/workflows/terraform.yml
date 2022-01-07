@@ -39,8 +39,8 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      run: terraform plan
-      
+      run: terraform plan -out "apply_this.tfplan" -var ibm_cloud_api_key=${IBM_CLOUD_API_KEY} -var namespace=${IMAGE_NAME} -var clustername=${IKS_CLUSTER} -var webhook_to_slack=${{ secrets.WEBHOOK_TO_SLACK }}
+
     - name: add-plan-comment
       id: comment
       uses: actions/github-script@v3
@@ -74,4 +74,4 @@ jobs:
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply
       if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-      run: terraform apply -auto-approve
+      run: terraform apply -auto-approve "apply_this.tfplan"
