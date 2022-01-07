@@ -1,13 +1,10 @@
-// Logic for calculating fare according to ride details
-function catString(...a) {
-    meow = ''
-    for (var i = 0; i < a.length; i++) {
-        meow += a[i] + ' '
+/* Cat list of words to return a sentence
+* param: ...a -> list of words
+*/
+exports.catString = function (...words) {
+    sentence = ''
+    for (var i = 0; i < words.length; i++) {
+        sentence += words[i] + ' '
     }
-    return meow.trim()
-}
-  
-// Exports the two functions to server.js
-exports = module.exports = {
-    catString
+    return sentence.trim()
 }

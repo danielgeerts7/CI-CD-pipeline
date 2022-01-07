@@ -6,7 +6,7 @@
 # 2. Setup secrets in your repository by going to settings: Create ICR_NAMESPACE and IBM_CLOUD_API_KEY
 # 3. Change the values for the IBM_CLOUD_REGION, REGISTRY_HOSTNAME, IMAGE_NAME, IKS_CLUSTER, DEPLOYMENT_NAME, and PORT
 
-name: Build and Deploy to IKS
+name: Continuous Deployment (IKS)
 
 on:
   push:
@@ -20,13 +20,13 @@ on:
 env:
   GITHUB_SHA: ${{ github.sha }}
   IBM_CLOUD_API_KEY: ${{ secrets.IBM_CLOUD_API_KEY }}
-  IBM_CLOUD_REGION: eu-de
+  IBM_CLOUD_REGION: ${{ secrets.IBM_CLOUD_REGION }}
   ICR_NAMESPACE: ${{ secrets.ICR_NAMESPACE }}
-  REGISTRY_HOSTNAME: de.icr.io
-  IMAGE_NAME: ibm-node-app-from-github-action
-  IKS_CLUSTER: my-ibm-cluster
-  DEPLOYMENT_NAME: iks-test
-  PORT: 80
+  REGISTRY_HOSTNAME: ${{ secrets.REGISTRY_HOSTNAME }}
+  IMAGE_NAME: cicd-casestudy-app
+  IKS_CLUSTER: ${{ secrets.CLUSTERNAME }}
+  DEPLOYMENT_NAME: my-node-app
+  PORT: 3000
 
 jobs:
   setup-build-publish-deploy:
@@ -70,6 +70,13 @@ jobs:
 
     # Deploy the Docker image to the IKS cluster
     - name: Deploy to IKS
+      # run: |
+      #     ibmcloud ks cluster config --cluster $IKS_CLUSTER
+      #     kubectl config current-context
+      #     kubectl apply -f deployment.yml
+      #     kubectl rollout status deployment/$DEPLOYMENT_NAME
+      #     kubectl apply -f service.yml
+      #     kubectl get services -o wide
       run: |
         ibmcloud ks cluster config --cluster $IKS_CLUSTER
         kubectl config current-context
