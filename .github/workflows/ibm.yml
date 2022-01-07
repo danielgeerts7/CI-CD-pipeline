@@ -19,7 +19,7 @@ env:
   IBM_CLOUD_API_KEY: ${{ secrets.IBM_CLOUD_API_KEY }}
   IBM_CLOUD_REGION: ${{ secrets.IBM_CLOUD_REGION }}
   ICR_NAMESPACE: ${{ secrets.ICR_NAMESPACE }}
-  REGISTRY_HOSTNAME: icr.io
+  REGISTRY_HOSTNAME: ${{ secrets.REGISTRY_HOSTNAME }}icr.io
   IMAGE_NAME: cicd-casestudy-app
   IKS_CLUSTER: ${{ secrets.CLUSTERNAME }}
   DEPLOYMENT_NAME: my-node-app
