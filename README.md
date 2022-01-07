@@ -2,7 +2,7 @@
 
 View [CASE_STUDY.md](CASE_STUDY.md) for a detailed description of the project.
 
-[![Orchestration (Terraform)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/terraform.yml/badge.svg)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/terraform.yml?branch=master)
+[![Orchestration (Terraform)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/terraform.yml/badge.svg?branch=master)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/terraform.yml)
 
 [![Continuous Deployment (IKS)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/ibm.yml/badge.svg?branch=master)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/ibm.yml)
 
