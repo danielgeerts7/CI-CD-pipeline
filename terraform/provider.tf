@@ -15,6 +15,9 @@ terraform {
       version = "~> 1.37.1"
     }
   }
+}
+
+terraform {
   cloud {
     organization = "devdaniels"
 

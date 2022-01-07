@@ -12,6 +12,7 @@ on:
 jobs:
   setup-build-test:
     runs-on: ubuntu-latest
+    environment: node-tests
     defaults:
       run:
         working-directory: ./app
