@@ -28,3 +28,9 @@ variable "clustername" {
   type    = string
   default = "tfcluster-daniel"
 }
+
+variable "datacenter" {
+  type    = string
+  default = "mil01"
+}
+
