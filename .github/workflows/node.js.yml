@@ -12,7 +12,7 @@ on:
 jobs:
   setup-build-test:
     runs-on: ubuntu-latest
-    environment: ci
+    environment: dev
     defaults:
       run:
         working-directory: ./app
