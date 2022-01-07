@@ -3,8 +3,8 @@ data "ibm_org" "org" {
 }
 
 data "ibm_space" "space" {
-  org   = var.ibm_cloud_org
-  name  = var.ibm_cloud_space
+  org  = var.ibm_cloud_org
+  name = var.ibm_cloud_space
 }
 
 data "ibm_account" "account" {
