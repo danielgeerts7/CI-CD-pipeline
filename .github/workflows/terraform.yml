@@ -34,13 +34,17 @@ jobs:
       run: terraform init
 
     # Checks that all Terraform configuration files adhere to a canonical format
-#    - name: Terraform Format
-#      run: terraform fmt -check
+    - name: Terraform validate
+      run: terraform validate
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan -out "apply_this.tfplan" -var ibm_cloud_api_key=${{ secrets.IBM_CLOUD_API_KEY }} -var namespace=${{ secrets.ICR_NAMESPACE }} -var clustername=${{ secrets.CLUSTERNAME }} -var webhook_to_slack=${{ secrets.WEBHOOK_TO_SLACK }}
 
+    - name: Terraform Plan Status
+      if: steps.plan.outcome == 'failure'
+      run: exit 1 
+        
     - name: add-plan-comment
       id: comment
       uses: actions/github-script@v3
