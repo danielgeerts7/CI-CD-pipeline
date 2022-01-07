@@ -3,6 +3,7 @@
 View [CASE_STUDY.md](CASE_STUDY.md) for a detailed description of the project.
 
 Last results of the workflows on [master](https://github.com/danielgeerts7/cicd-pipeline/tree/master) branch:
+
 [![Orchestration (Terraform)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/terraform.yml/badge.svg?branch=master)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/terraform.yml)
 [![Continuous Deployment (IKS)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/ibm.yml/badge.svg?branch=master)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/ibm.yml)
 [![Continuous Integration (node.js tests)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/node.js.yml)
