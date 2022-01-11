@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: my-node-app
+  labels:
+    app: my-node-app
 spec:
   selector:
     app: my-node-app
@@ -11,3 +13,5 @@ spec:
       protocol: TCP
       port: 3000
       targetPort: 3000
+status:
+  nodePort: {}
