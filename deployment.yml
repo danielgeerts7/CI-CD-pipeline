@@ -17,9 +17,8 @@ spec:
         app: my-node-app
     spec:
       containers:
-        - name: my-node-app-in-container
+        - name: my-node-app-container
           image: icr.io/ibm-daniels-workspace/cicd-casestudy-app:latest
-          imagePullPolicy: Never
           ports:
             - containerPort: 3000
           resources: {}
