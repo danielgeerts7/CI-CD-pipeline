@@ -26,12 +26,12 @@ Last results of the workflows on [master](https://github.com/danielgeerts7/cicd-
 
 Check [Makefile](Makefile) for more make commands. Some examples:
 
-    make compose
-    make build
-    make push API_KEY=..
-    make tf-create-workspace ENV=staging
-    make tf-init ENV=staging
-    make tf-plan ENV=staging
+    $ make compose
+    $ make build
+    $ make push API_KEY=..
+    $ make tf-create-workspace ENV=staging
+    $ make tf-init ENV=staging
+    $ make tf-plan ENV=staging
 
 ## Docker:
 
@@ -54,9 +54,9 @@ Go to [localhost:32100](http://localhost:32100) to view Kubernetes results.
 
 [Optional] Check if Kubernetes works:
 
-    > $ kubectl get all
-    > $ kubectl exec -it my-node-app-557d99ff59-tc57w sh
-    > $ printenv | grep SERVICE
+    $ kubectl get all
+    $ kubectl exec -it my-node-app-557d99ff59-tc57w sh
+    $ printenv | grep SERVICE
 
 ## Terraform:
 
