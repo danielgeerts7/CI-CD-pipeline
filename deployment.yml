@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: my-node-app-container
-          image: icr.io/ibm-daniels-workspace/cicd-casestudy-app:latest
+          image: icr.io/ibm-daniels-workspace/cicd-casestudy-app:${{ github.sha }}
           ports:
             - containerPort: 3000
           resources: {}
