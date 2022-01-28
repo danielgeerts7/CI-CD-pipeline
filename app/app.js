@@ -5,7 +5,7 @@ const app = express();
 
 app.get('/', function (req, res) {
   let result = functions.catString('Hello', 'world', '!')
-  res.send(result);
+  res.send(result + ' Daniël was here!');
 });
 
 app.get('/demo', function (req, res) {
