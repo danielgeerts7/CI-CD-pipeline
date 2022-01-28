@@ -1,4 +1,4 @@
-name: 'Orchestration (Terraform)'
+name: 'Cloud setup (Terraform)'
 
 on:
   push:
@@ -9,7 +9,7 @@ jobs:
   terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
-    environment: orchestration
+    environment: prod
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
