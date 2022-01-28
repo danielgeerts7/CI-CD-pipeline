@@ -8,6 +8,11 @@ app.get('/', function (req, res) {
   res.send(result);
 });
 
+app.get('/demo', function (req, res) {
+  let result = functions.catString('This', 'is', 'my', 'demo')
+  res.send(result);
+});
+
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });
