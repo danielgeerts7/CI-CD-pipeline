@@ -23,7 +23,7 @@ resource "ibm_container_cluster" "cluster" {
   machine_type      = "free"
   hardware          = "shared"
   no_subnet         = true
-  kube_version      = "1.22.4"
+  kube_version      = "1.22"
   default_pool_size = 1
 
   webhook {
