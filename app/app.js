@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/demo', function (req, res) {
-  let result = functions.catString('This', 'is', 'my', 'demo')
+  let result = functions.catString('This', 'is', 'my', 'beautiful' ,'demo')
   res.send(result);
 });
 
