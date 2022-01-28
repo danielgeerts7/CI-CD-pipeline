@@ -6,7 +6,7 @@ Last results of the workflows on [master](https://github.com/danielgeerts7/cicd-
 
 [![Continuous Integration (node.js build/test)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/node.js.yml)
 [![Continuous Deployment (IKS)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/ibm.yml/badge.svg?branch=master)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/ibm.yml)
-[![Orchestration (Terraform)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/terraform.yml/badge.svg?branch=master)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/terraform.yml)
+[![Cloud env setup (Terraform)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/terraform.yml/badge.svg?branch=master)](https://github.com/danielgeerts7/cicd-pipeline/actions/workflows/terraform.yml)
 
 ## Tools used:
 
