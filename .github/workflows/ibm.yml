@@ -2,7 +2,7 @@ name: Continuous Deployment (IKS)
 
 on:
   workflow_run:
-    workflows: ["Orchestration (Terraform)"] # Only trigger, when the Orchestration (Terraform) workflow succeeded
+    workflows: ["Cloud setup (Terraform)"] # Only trigger, when the Orchestration (Terraform) workflow succeeded
     types:
       - completed
 
