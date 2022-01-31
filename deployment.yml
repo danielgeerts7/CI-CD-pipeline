@@ -17,8 +17,10 @@ spec:
         app: my-node-app
     spec:
       containers:
-        - name: my-node-app-container-${{ github.sha }}
-          image: icr.io/ibm-daniels-workspace/cicd-casestudy-app:${{ github.sha }}
+        - name: my-node-app-container
+          image: icr.io/ibm-daniels-workspace/cicd-casestudy-app
+          imagePullPolicy: Always
+          command: [ "echo", "K8 container SUCCESS" ]
           ports:
             - containerPort: 3000
           resources: {}
