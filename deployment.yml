@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: my-node-app-container
-          image: icr.io/ibm-daniels-workspace/cicd-casestudy-app
+          image: de.icr.io/ibm-daniels-workspace/cicd-casestudy-app
           imagePullPolicy: Always
           command: [ "echo", "K8 container SUCCESS" ]
           ports:
