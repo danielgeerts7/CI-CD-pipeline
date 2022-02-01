@@ -68,7 +68,7 @@ jobs:
         echo "$(<deployment.yaml )"
         kubectl apply -f deployment.yaml
         kubectl rollout status deployment/$DEPLOYMENT_NAME
-        kubectl create service nodeport $DEPLOYMENT_NAME --tcp=$PORT:$ACCESS_PORT --dry-run=client -o yaml > service.yaml
+        kubectl create service nodeport $DEPLOYMENT_NAME --tcp=$PORT:$PORT --dry-run=client -o yaml > service.yaml
         echo "$(<service.yaml )"
         kubectl apply -f service.yaml
         kubectl get services -o wide
