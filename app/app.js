@@ -13,6 +13,11 @@ app.get('/demo', function (req, res) {
   res.send(result);
 });
 
+app.get('/test', function (req, res) {
+  let result = functions.catString('T', 'E', 'S', 'T' ,'I', 'N', 'G')
+  res.send(result);
+});
+
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });
